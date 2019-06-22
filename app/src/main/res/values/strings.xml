@@ -2,8 +2,9 @@
     <string name="app_name">Timestamp Converter</string>
     <string name="action_settings">Settings</string>
     <string name="et_input_hint">milliseconds</string>
-    <string name="action_copy">Copy</string>
-    <string name="action_share">Share</string>
+    <string name="action_copy">Copy Date</string>
+    <string name="action_share">Share Date</string>
     <string name="share_intent_title">share to…</string>
     <string name="tv_output_hint">Open Date/Time Picker</string>
+    <string name="copied">copied to clipboard</string>
 </resources>

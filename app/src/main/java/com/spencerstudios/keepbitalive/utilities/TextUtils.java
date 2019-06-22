@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.spencerstudios.keepbitalive.R;
 
@@ -23,6 +24,7 @@ public class TextUtils {
         ClipboardManager clipboard = (ClipboardManager) context.getSystemService(CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("label", text);
         clipboard.setPrimaryClip(clip);
+        Toast.makeText(context, context.getString(R.string.copied), Toast.LENGTH_SHORT).show();
     }
 
     public void share(){
