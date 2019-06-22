@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:id="@+id/tv_formatted_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:onClick="openDateTimePicker"
+        android:textColor="@color/colorText"
+        android:hint="@string/tv_output_hint"
+        android:textSize="26sp" />
+
+    <EditText
+        android:id="@+id/et_millisecond_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="6dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="@string/et_input_hint"
+        android:inputType="numberSigned"
+        android:textColor="@color/colorText"
+        android:textSize="26sp"
+        tools:ignore="Autofill" />
+
+
+    <ImageView
+        android:id="@+id/iv_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="24sp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:onClick="clearInput"
+        android:src="@drawable/ic_close_black_24dp"
+        android:tint="#747474"
+        tools:ignore="ContentDescription" />
+
+</LinearLayout>
