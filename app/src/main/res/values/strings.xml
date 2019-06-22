@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Timestamp Converter</string>
+    <string name="app_name">Long Timestamp Converter</string>
     <string name="action_settings">Settings</string>
     <string name="et_input_hint">milliseconds</string>
     <string name="action_copy">Copy Date</string>

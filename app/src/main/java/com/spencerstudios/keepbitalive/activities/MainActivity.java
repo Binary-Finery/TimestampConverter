@@ -1,5 +1,6 @@
 package com.spencerstudios.keepbitalive.activities;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Build;
@@ -13,15 +14,16 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-import com.spencerstudios.keepbitalive.utilities.CalendarUtil;
 import com.spencerstudios.keepbitalive.R;
 import com.spencerstudios.keepbitalive.fragments.DatePickerFragment;
 import com.spencerstudios.keepbitalive.fragments.TimePickerFragment;
+import com.spencerstudios.keepbitalive.utilities.CalendarUtil;
 import com.spencerstudios.keepbitalive.utilities.TextUtils;
 
 import java.text.DateFormat;
@@ -97,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Date
     }
 
     public void openDateTimePicker(View v) {
+        hideKeyboard(v);
         DialogFragment datePicker = new DatePickerFragment();
         datePicker.show(getSupportFragmentManager(), DATE_PICKER_TAG);
     }
@@ -107,9 +110,21 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Date
 
     private void setCursor() {
         int len = etInput.getText().toString().length();
-        if (len > 0) {
+        if (len > 0)
             etInput.setSelection(len);
-        }
+    }
+
+    private String formatContent(TextView tvOutput, EditText etInput) {
+        return String.format("formatted date:\n%s\n\nlong timestamp:\n%s", tvOutput.getText().toString(), etInput.getText().toString());
+    }
+
+    private boolean validateHasContent(TextView tv, EditText et) {
+        return tv.getText().toString().length() > 0 && et.getText().toString().length() > 0;
+    }
+
+    private void hideKeyboard(View view) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     @Override
@@ -123,22 +138,14 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, Date
 
         switch (item.getItemId()) {
             case R.id.action_copy:
-                if(validateHasContent(tvOutput, etInput))
+                if (validateHasContent(tvOutput, etInput))
                     new TextUtils(getApplicationContext(), formatContent(tvOutput, etInput)).copy();
                 break;
             default:
-                if(validateHasContent(tvOutput, etInput))
+                if (validateHasContent(tvOutput, etInput))
                     new TextUtils(getApplicationContext(), formatContent(tvOutput, etInput)).share();
                 break;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private String formatContent(TextView tvOutput, EditText etInput) {
-        return String.format("formatted date:\n%s\n\nlong timestamp:\n%s", tvOutput.getText().toString(), etInput.getText().toString());
-    }
-
-    private boolean validateHasContent(TextView tv, EditText et) {
-        return tv.getText().toString().length() > 0 && et.getText().toString().length() > 0;
     }
 }

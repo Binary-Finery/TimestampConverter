@@ -32,7 +32,9 @@ public class TextUtils {
         sharingIntent.setType("text/plain");
         sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, context.getString(R.string.app_name));
         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, text);
-        context.startActivity(Intent.createChooser(sharingIntent, context.getString(R.string.share_intent_title)));
+        Intent i = new Intent(Intent.createChooser(sharingIntent, context.getString(R.string.share_intent_title)));
+        i.addFlags((Intent.FLAG_ACTIVITY_NEW_TASK));
+        context.startActivity(i);
     }
 
 
