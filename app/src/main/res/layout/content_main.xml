@@ -7,15 +7,49 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@color/colorPrimaryDark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".activities.MainActivity"
     tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_saved_dates"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="fabClick"
+            app:srcCompat="@drawable/baseline_list_white_24" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="fabClick"
+            app:srcCompat="@drawable/baseline_save_white_24" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fab_margin"
+            android:onClick="fabClick"
+            app:srcCompat="@drawable/baseline_share_white_24" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tv_formatted_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
@@ -29,10 +63,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="6dp"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:hint="@string/et_input_hint"
+        android:layout_marginBottom="24dp"
         android:inputType="numberSigned"
         android:textColor="@color/colorText"
         android:textSize="26sp"
@@ -44,7 +78,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_marginTop="24sp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:onClick="clearInput"
         android:src="@drawable/ic_close_black_24dp"

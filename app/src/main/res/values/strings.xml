@@ -7,4 +7,7 @@
     <string name="share_intent_title">share to…</string>
     <string name="tv_output_hint">Open Date/Time Picker</string>
     <string name="copied">copied to clipboard</string>
+    <string name="title_activity_launch">LaunchActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_saved_dates">SavedDatesActivity</string>
 </resources>

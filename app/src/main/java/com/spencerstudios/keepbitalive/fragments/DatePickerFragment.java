@@ -15,5 +15,6 @@ public class DatePickerFragment extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         int[] i = new CalendarUtil().getDate();
         return new DatePickerDialog(getActivity(), (DatePickerDialog.OnDateSetListener) getActivity(), i[0], i[1], i[2]);
+
     }
 }

@@ -1,16 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.spencerstudios.keepbitalive.activities.MainActivity">
+    tools:context="com.spencerstudios.keepbitalive.activities.LauncherActivity">
+
     <item
-        android:id="@+id/action_copy"
+        android:id="@+id/action_save"
         android:orderInCategory="100"
-        android:title="@string/action_copy"
-        app:showAsAction="never" />
+        android:icon="@drawable/baseline_save_white_24"
+        android:title="save date"
+        app:showAsAction="always"
+        tools:ignore="AlwaysShowAction,HardcodedText" />
 
     <item
         android:id="@+id/action_share"
         android:orderInCategory="100"
-        android:title="@string/action_share"
-        app:showAsAction="never"/>
+        android:icon="@drawable/baseline_share_white_24"
+        android:title="share date"
+        app:showAsAction="always"
+        tools:ignore="HardcodedText" />
+
 </menu>
